@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 st.set_page_config(page_title="Data Engineering Project")
-st.title("Basic Data Cleaning Tool")
+st.title("Elizabeth Data")
 st.caption("แอปนี้ช่วยคุณตรวจสอบ จัดการ Missing Values, ประเภทข้อมูล และเตรียมข้อมูลเบื้องต้น")
 file = st.file_uploader("อัปโหลดไฟล์ Excel/CSV", type=["xlsx", "csv"])#ให้ uploadfile
 if file is not None: #อ่านไฟล์เป็น Data fram
@@ -264,6 +264,7 @@ if file is not None: #อ่านไฟล์เป็น Data fram
          st.error(f"อ่านไฟล์ไม่สำเร็จ: {e}")
 else:
      st.info("⬆️ กรุณาอัปโหลดไฟล์ .xlsx หรือ .csv")
+
 
 
 
