@@ -36,7 +36,6 @@ if file is not None: #อ่านไฟล์เป็น Data fram
                     "DType": df.dtypes.astype(str).values
                 })
                 .sort_values("Missing Count(จำนวนแถว)", ascending=False) #เรียงลำดับให้คอลัมน์ที่ Missing เยอะสุดอยู่ข้างบน
-                .reset_index(drop=True) #รีเซ็ต index ใหม่ให้เป็น 0,1,2,... ให้ดูง่าย
             )
             st.dataframe(audit_missing) #แสดงผลออกมาเป็นตาราง
                 
@@ -264,6 +263,7 @@ if file is not None: #อ่านไฟล์เป็น Data fram
          st.error(f"อ่านไฟล์ไม่สำเร็จ: {e}")
 else:
      st.info("⬆️ กรุณาอัปโหลดไฟล์ .xlsx หรือ .csv")
+
 
 
 
