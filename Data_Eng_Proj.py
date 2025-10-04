@@ -44,9 +44,9 @@ if file is not None: #อ่านไฟล์เป็น Data fram
             st.markdown("### 2) Outlier Check(Boxplot)")
             numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist() #เลือกเฉพาะคอลัมน์ตัวเลข
             if not numeric_cols:
-                st.info("ไม่พบคอลัมน์ประเภทตัวเลขสำหรับทำ Boxplot")
+                st.info("ไม่พบคอลัมน์สำหรับทำ Boxplot")
             else:
-                box_col = st.selectbox("เลือกคอลัมน์ตัวเลขเพื่อดู Boxplot", numeric_cols, key="outlier_box_col")
+                box_col = st.selectbox("เลือกคอลัมน์เพื่อดู Boxplot", numeric_cols, key="outlier_box_col")
                 fig, ax = plt.subplots(figsize=(6, 4)) #สร้าง Boxplot
                 ax.boxplot(df[box_col].dropna(), vert=True, patch_artist=True) #ตัดค่าที่หายไปออกก่อน plot
                 ax.set_title(f"Boxplot of {box_col}")
@@ -264,6 +264,7 @@ if file is not None: #อ่านไฟล์เป็น Data fram
          st.error(f"อ่านไฟล์ไม่สำเร็จ: {e}")
 else:
      st.info("⬆️ กรุณาอัปโหลดไฟล์ .xlsx หรือ .csv")
+
 
 
 
