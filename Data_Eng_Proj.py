@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 st.set_page_config(page_title="Data Engineering Project")
-st.title("Basic Data Cleaning Tool for Regression")
-st.caption("แอปนี้ช่วยคุณตรวจสอบ จัดการ Missing Values, ประเภทข้อมูล และเตรียมข้อมูลเบื้องต้นให้พร้อมสำหรับการสร้างโมเดล Regression")
+st.title("Basic Data Cleaning Tool")
+st.caption("แอปนี้ช่วยคุณตรวจสอบ จัดการ Missing Values, ประเภทข้อมูล และเตรียมข้อมูลเบื้องต้น")
 file = st.file_uploader("อัปโหลดไฟล์ Excel/CSV", type=["xlsx", "csv"])#ให้ uploadfile
 if file is not None: #อ่านไฟล์เป็น Data fram
     try: #กันอ่านไฟล์error กรณี  upload file อื่นที่ไม่ใช่ Excel or csv
@@ -264,5 +264,6 @@ if file is not None: #อ่านไฟล์เป็น Data fram
          st.error(f"อ่านไฟล์ไม่สำเร็จ: {e}")
 else:
      st.info("⬆️ กรุณาอัปโหลดไฟล์ .xlsx หรือ .csv")
+
 
 
