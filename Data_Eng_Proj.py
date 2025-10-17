@@ -72,17 +72,17 @@ if file is not None: #อ่านไฟล์เป็น Data fram
                     if do_process:
                         df_new = df.copy()
             
-                        if action == "ลบทิ้ง":
+                        if action == "ลบแถวที่มีค่า Outlier ทิ้ง":
                             before = len(df_new)
                             df_new = df_new.loc[~mask_out].copy()  # เก็บเฉพาะแถวที่ไม่ใช่ outlier
                             removed = before - len(df_new)
-                            st.success(f"🗑️ ลบ Outlier แล้ว {removed} แถว")
+                            st.success(f"ลบ Outlier แล้ว {removed} แถว")
                         
                         else:  # แทนที่ด้วย median
                             median_val = float(df[box_col].median())
                             n_changed = int(mask_out.sum())
                             df_new.loc[mask_out, box_col] = median_val
-                            st.success(f"🧮 แทนที่ Outlier {n_changed} ค่าในคอลัมน์ **{box_col}** ด้วย median = {median_val:g}")
+                            st.success(f"แทนที่ Outlier {n_changed} ค่าในคอลัมน์ **{box_col}** ด้วย median = {median_val:g}")
             
                         # อัปเดตผลลัพธ์กลับเข้า session_state และแสดงตัวอย่าง
                         st.session_state.df = df_new.copy()
@@ -284,6 +284,7 @@ if file is not None: #อ่านไฟล์เป็น Data fram
          st.error(f"อ่านไฟล์ไม่สำเร็จ: {e}")
 else:
      st.info("⬆️ กรุณาอัปโหลดไฟล์ .xlsx หรือ .csv")
+
 
 
 
