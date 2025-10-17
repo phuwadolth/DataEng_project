@@ -68,7 +68,7 @@ if file is not None: #อ่านไฟล์เป็น Data fram
                         ("ลบแถวที่มีค่า Outlier ทิ้ง", "แทนที่ค่า Outlier ด้วยค่ามัธยฐาน (Median)"),
                         key="outlier_action"
                      )
-                   
+                    do_process = st.button("✅ ดำเนินการกับ Outlier", disabled=(mask_out.sum() == 0))
                     if do_process:
                         df_new = df.copy()
             
@@ -284,6 +284,7 @@ if file is not None: #อ่านไฟล์เป็น Data fram
          st.error(f"อ่านไฟล์ไม่สำเร็จ: {e}")
 else:
      st.info("⬆️ กรุณาอัปโหลดไฟล์ .xlsx หรือ .csv")
+
 
 
 
