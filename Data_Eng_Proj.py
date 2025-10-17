@@ -87,7 +87,7 @@ if file is not None: #อ่านไฟล์เป็น Data fram
                         # อัปเดตผลลัพธ์กลับเข้า session_state และแสดงตัวอย่าง
                         st.session_state.df = df_new.copy()
                         df = df_new  # อัปเดตตัวแปร df ในหน้านี้ด้วย (เพื่อให้วิดเจ็ตอื่นๆ ใช้ค่าล่าสุด)
-                        st.dataframe(df.head(50))
+
                 else:
                     st.info("✅ ไม่มี Outlier ในคอลัมน์นี้")
              
@@ -284,6 +284,7 @@ if file is not None: #อ่านไฟล์เป็น Data fram
          st.error(f"อ่านไฟล์ไม่สำเร็จ: {e}")
 else:
      st.info("⬆️ กรุณาอัปโหลดไฟล์ .xlsx หรือ .csv")
+
 
 
 
